@@ -78,11 +78,6 @@ class WC_Custom_Price_Calculator_Noveo {
             add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
             return;
         }
-
-        // Inclure les classes du plugin
-        require_once WCCPC_PLUGIN_DIR . 'includes/class-frontend-display.php';
-        require_once WCCPC_PLUGIN_DIR . 'includes/class-cart-handler.php';
-        require_once WCCPC_PLUGIN_DIR . 'includes/class-checkout-handler.php';
     }
 
     /**
@@ -110,6 +105,12 @@ class WC_Custom_Price_Calculator_Noveo {
      */
     public function init_classes() {
         if ( class_exists( 'WooCommerce' ) ) {
+            // Inclure les classes du plugin
+            require_once WCCPC_PLUGIN_DIR . 'includes/class-frontend-display.php';
+            require_once WCCPC_PLUGIN_DIR . 'includes/class-cart-handler.php';
+            require_once WCCPC_PLUGIN_DIR . 'includes/class-checkout-handler.php';
+
+            // Instancier les classes
             new WCCPC_Frontend_Display();
             new WCCPC_Cart_Handler();
             new WCCPC_Checkout_Handler();
