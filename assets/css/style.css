@@ -1,0 +1,374 @@
+/**
+ * WooCommerce Custom Price Calculator - Styles CSS
+ * Styles pour les champs de calcul personnalisés
+ *
+ * @package WC_Custom_Price_Calculator_Noveo
+ */
+
+/* ==========================================================================
+   Conteneur principal du calculateur
+   ========================================================================== */
+
+.wccpc-calculator-wrapper {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.wccpc-calculator-title {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+.wccpc-calculator-description {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Conteneur des champs
+   ========================================================================== */
+
+.wccpc-fields-container {
+    margin-bottom: 20px;
+}
+
+.wccpc-field-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.wccpc-field-row:last-child {
+    margin-bottom: 0;
+}
+
+.wccpc-field-group {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wccpc-field-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.9em;
+    display: block;
+}
+
+.wccpc-calculator-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.wccpc-calculator-field:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.wccpc-calculator-field:hover {
+    border-color: #999;
+}
+
+/* État invalide */
+.wccpc-calculator-field:invalid {
+    border-color: #e74c3c;
+}
+
+/* Chrome, Safari, Edge, Opera - Masquer les flèches des inputs number */
+.wccpc-calculator-field::-webkit-outer-spin-button,
+.wccpc-calculator-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox - Masquer les flèches des inputs number */
+.wccpc-calculator-field[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ==========================================================================
+   Conteneur des résultats
+   ========================================================================== */
+
+.wccpc-results-container {
+    background: #fff;
+    border: 2px solid #0073aa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.wccpc-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.wccpc-result-item:last-child {
+    border-bottom: none;
+}
+
+.wccpc-result-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.wccpc-result-value {
+    font-weight: 700;
+    color: #333;
+    font-size: 1em;
+}
+
+/* Résultat du prix avec style spécial */
+.wccpc-result-price {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 15px -20px -20px;
+    padding: 20px;
+    border-radius: 0 0 6px 6px;
+}
+
+.wccpc-result-price .wccpc-result-label,
+.wccpc-result-price .wccpc-result-value {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.wccpc-result-price .wccpc-result-value {
+    font-size: 1.4em;
+}
+
+/* Message d'information */
+.wccpc-result-info {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin-top: 15px;
+    color: #856404;
+    font-size: 0.9em;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.wccpc-info-icon {
+    font-style: normal;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Tablettes */
+@media (max-width: 768px) {
+    .wccpc-field-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .wccpc-field-group {
+        min-width: 100%;
+    }
+
+    .wccpc-calculator-wrapper {
+        padding: 20px;
+    }
+
+    .wccpc-result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .wccpc-result-price {
+        margin: 15px -20px -20px;
+        padding: 15px 20px;
+    }
+}
+
+/* Petits écrans */
+@media (max-width: 480px) {
+    .wccpc-calculator-wrapper {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .wccpc-calculator-title {
+        font-size: 1.1em;
+    }
+
+    .wccpc-calculator-field {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    .wccpc-result-price .wccpc-result-value {
+        font-size: 1.2em;
+    }
+
+    .wccpc-result-price {
+        margin: 10px -15px -15px;
+        padding: 15px;
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wccpc-results-container {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   Compatibilité avec les thèmes WooCommerce
+   ========================================================================== */
+
+/* S'assurer que le calculateur s'affiche correctement avant le bouton d'ajout au panier */
+.single_add_to_cart_button {
+    margin-top: 15px;
+}
+
+/* Styles pour le panier et la commande */
+.woocommerce-cart-form .wccpc-meta-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.woocommerce-cart-form .wccpc-meta-value {
+    color: #333;
+}
+
+/* ==========================================================================
+   Mode sombre (optionnel)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .wccpc-calculator-wrapper {
+        background: #2d2d2d;
+        border-color: #444;
+    }
+
+    .wccpc-calculator-title {
+        color: #fff;
+        border-bottom-color: #0073aa;
+    }
+
+    .wccpc-calculator-description {
+        color: #ccc;
+    }
+
+    .wccpc-field-group label {
+        color: #fff;
+    }
+
+    .wccpc-calculator-field {
+        background: #1a1a1a;
+        border-color: #555;
+        color: #fff;
+    }
+
+    .wccpc-calculator-field:focus {
+        border-color: #0073aa;
+        background: #222;
+    }
+
+    .wccpc-results-container {
+        background: #1a1a1a;
+        border-color: #0073aa;
+    }
+
+    .wccpc-result-label,
+    .wccpc-result-value {
+        color: #fff;
+    }
+
+    .wccpc-result-item {
+        border-bottom-color: #444;
+    }
+}
+
+/* ==========================================================================
+   Accessibilité
+   ========================================================================== */
+
+.wccpc-calculator-field:focus-visible {
+    outline: 3px solid #0073aa;
+    outline-offset: 2px;
+}
+
+/* Amélioration du contraste pour les utilisateurs malvoyants */
+@media (prefers-contrast: high) {
+    .wccpc-calculator-wrapper {
+        border-width: 2px;
+    }
+
+    .wccpc-calculator-field {
+        border-width: 2px;
+    }
+
+    .wccpc-result-price {
+        background: #333;
+    }
+}
+
+/* ==========================================================================
+   Impressions
+   ========================================================================== */
+
+@media print {
+    .wccpc-calculator-wrapper {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+
+    .wccpc-calculator-field {
+        border: 1px solid #000;
+    }
+
+    .wccpc-result-price {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+    }
+
+    .wccpc-result-price .wccpc-result-label,
+    .wccpc-result-price .wccpc-result-value {
+        color: #000 !important;
+    }
+}
